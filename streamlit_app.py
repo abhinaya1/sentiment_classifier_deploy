@@ -28,9 +28,9 @@ with st.sidebar:
 - TF-IDF Vectorizer
 
 ### Classes
-- 😊 Positive
-- 😐 Neutral
-- ☹️ Negative
+- 😊 postive
+- 😐 neutral
+- ☹️ negative
 
 ### Backend
 - FastAPI
@@ -65,7 +65,7 @@ st.title("💬 Customer Review Sentiment Classifier")
 
 st.write(
     """
-Predict whether a customer review is **Positive**, **Neutral**, or **Negative**
+Predict whether a customer review is **postive**, **neutral**, or **negative**
 using a machine learning model deployed with FastAPI.
 """
 )
@@ -133,14 +133,14 @@ if st.button("🔍 Predict Sentiment", use_container_width=True):
 
             st.subheader("Prediction")
 
-            if prediction.lower() == "positive":
-                st.success("😊 Positive")
+            if prediction.lower() == "postive":
+                st.success("😊 postive")
 
             elif prediction.lower() == "neutral":
-                st.warning("😐 Neutral")
+                st.warning("😐 neutral")
 
             else:
-                st.error("☹️ Negative")
+                st.error("☹️ negative")
 
             # --------------------------------------------
             # Show confidence
@@ -150,17 +150,17 @@ if st.button("🔍 Predict Sentiment", use_container_width=True):
 
                 st.subheader("Confidence Scores")
 
-                positive = probabilities["Positive"]
-                neutral = probabilities["Neutral"]
-                negative = probabilities["Negative"]
+                postive = probabilities["postive"]
+                neutral = probabilities["neutral"]
+                negative = probabilities["negative"]
 
-                st.write(f"😊 Positive: **{positive:.1%}**")
-                st.progress(positive)
+                st.write(f"😊 postive: **{postive:.1%}**")
+                st.progress(postive)
 
-                st.write(f"😐 Neutral: **{neutral:.1%}**")
+                st.write(f"😐 neutral: **{neutral:.1%}**")
                 st.progress(neutral)
 
-                st.write(f"☹️ Negative: **{negative:.1%}**")
+                st.write(f"☹️ negative: **{negative:.1%}**")
                 st.progress(negative)
 
             else:
@@ -201,9 +201,9 @@ with st.expander("⚙️ How It Works"):
 
 5. Logistic Regression predicts one of three classes:
 
-   - Positive
-   - Neutral
-   - Negative
+   - postive
+   - neutral
+   - negative
 
 6. The prediction and confidence scores are returned to Streamlit and displayed.
 """)
