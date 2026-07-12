@@ -116,6 +116,8 @@ if st.button("🔍 Predict Sentiment", use_container_width=True):
             )
 
             if response.status_code != 200:
+                st.write("Status:", response.status_code)
+                st.write("Response:", response.text)
                 st.error("Prediction failed.")
                 st.stop()
 
