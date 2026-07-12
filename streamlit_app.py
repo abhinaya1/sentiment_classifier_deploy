@@ -108,6 +108,7 @@ if st.button("🔍 Predict Sentiment", use_container_width=True):
     with st.spinner("Predicting..."):
 
         try:
+            st.write("API URL:", API_URL)
 
             response = requests.post(
                 f"{API_URL}/predict",
