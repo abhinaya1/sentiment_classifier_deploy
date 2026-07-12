@@ -28,7 +28,7 @@ with st.sidebar:
 - TF-IDF Vectorizer
 
 ### Classes
-- 😊 postive
+- 😊 positive
 - 😐 neutral
 - ☹️ negative
 
@@ -65,7 +65,7 @@ st.title("💬 Customer Review Sentiment Classifier")
 
 st.write(
     """
-Predict whether a customer review is **postive**, **neutral**, or **negative**
+Predict whether a customer review is **positive**, **neutral**, or **negative**
 using a machine learning model deployed with FastAPI.
 """
 )
@@ -133,8 +133,8 @@ if st.button("🔍 Predict Sentiment", use_container_width=True):
 
             st.subheader("Prediction")
 
-            if prediction.lower() == "postive":
-                st.success("😊 postive")
+            if prediction.lower() == "positive":
+                st.success("😊 positive")
 
             elif prediction.lower() == "neutral":
                 st.warning("😐 neutral")
@@ -150,12 +150,12 @@ if st.button("🔍 Predict Sentiment", use_container_width=True):
 
                 st.subheader("Confidence Scores")
 
-                postive = probabilities["postive"]
+                positive = probabilities["positive"]
                 neutral = probabilities["neutral"]
                 negative = probabilities["negative"]
 
-                st.write(f"😊 postive: **{postive:.1%}**")
-                st.progress(postive)
+                st.write(f"😊 positive: **{positive:.1%}**")
+                st.progress(positive)
 
                 st.write(f"😐 neutral: **{neutral:.1%}**")
                 st.progress(neutral)
@@ -201,7 +201,7 @@ with st.expander("⚙️ How It Works"):
 
 5. Logistic Regression predicts one of three classes:
 
-   - postive
+   - positive
    - neutral
    - negative
 
