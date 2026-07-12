@@ -5,7 +5,7 @@ import requests
 # Configuration
 # ---------------------------------------------------
 
-API_URL = "https://sentiment-classifier-deploy.onrender.com/predict"
+API_URL = "https://sentiment-classifier-deploy.onrender.com"
 
 st.set_page_config(
     page_title="Customer Review Sentiment Classifier",
