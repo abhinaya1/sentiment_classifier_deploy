@@ -21,10 +21,14 @@ def predict(review: Review):
 
     prediction = model.predict(X)[0]
 
-    probability = model.predict_proba(X).max()
+    probs = model.predict_proba(X)[0]
+
+    classes = model.classes_
 
     return {
-        "review": review.text,
         "prediction": prediction,
-        "confidence": round(float(probability),3)
+        "probabilities": {
+            cls: float(prob)
+            for cls, prob in zip(classes, probs)
+        }
     }

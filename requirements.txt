@@ -6,3 +6,4 @@ scipy
 joblib
 pandas
 pydantic
+streamlit
