@@ -1,87 +1,44 @@
-# Customer Review Sentiment Classifier Deployment
+# Customer Review Sentiment Classifier – Deployment
 
-An end-to-end Machine Learning application that classifies customer reviews into **Positive**, **Negative**, or **Neutral** sentiment using Natural Language Processing (NLP). The project includes a trained Logistic Regression model, a FastAPI backend for inference, and a Streamlit frontend for interactive predictions.
+This repository contains the **deployment** of a Customer Review Sentiment Classifier using **FastAPI**, **Streamlit**, and **Render**. The application serves a trained machine learning model through a REST API and provides an interactive web interface for real-time sentiment prediction.
 
----
-
-## Project Overview
-
-This application analyzes customer review text and predicts one of three sentiment classes:
-
-- 😊 Positive
-- 😐 Neutral
-- 😞 Negative
-
-For each prediction, the application returns:
-
-- Predicted sentiment
-- Confidence score
-- Probability for each sentiment class
-
-The project demonstrates a complete machine learning deployment workflow—from model training and serialization to API development and a user-friendly web interface.
+> **Sentiment Classes:** Positive • Neutral • Negative
 
 ---
 
-## Features
+## Overview
 
-- Three-class sentiment classification
-- NLP text preprocessing
-- TF-IDF vectorization
-- Logistic Regression classifier
-- REST API built with FastAPI
-- Interactive Streamlit web application
-- Confidence score and class probabilities
-- Ready for cloud deployment
+The application allows users to enter a customer review and receive:
+
+* Predicted sentiment (Positive, Neutral, or Negative)
+* Confidence score
+* Probability for each sentiment class
+
+This project focuses on taking a trained machine learning model from development to a production-style application that users can interact with through a web interface.
 
 ---
 
 ## Tech Stack
 
-### Machine Learning
-- Python
-- Scikit-learn
-- Pandas
-- NumPy
-- Joblib
+**Machine Learning**
 
-### Backend
-- FastAPI
-- Uvicorn
+* Scikit-learn
+* TF-IDF Vectorization
+* Logistic Regression
 
-### Frontend
-- Streamlit
+**Backend**
 
-### Deployment
-- Render
-- GitHub
+* FastAPI
+* Uvicorn
 
----
+**Frontend**
 
-## Model
+* Streamlit
 
-### Algorithm
-- Logistic Regression (Multiclass Classification)
+**Deployment**
 
-### Feature Engineering
-- Text cleaning
-- Lowercasing
-- TF-IDF Vectorization
-
-### Output
-
-Example response:
-
-```json
-{
-  "prediction": "Neutral",
-  "confidence": 0.82,
-  "probabilities": {
-    "Negative": 0.09,
-    "Neutral": 0.82,
-    "Positive": 0.09
-  }
-}
-```
+* Render
+* GitHub
 
 ---
 
@@ -99,36 +56,16 @@ sentiment_classifier_deploy
 ├── streamlit_app.py
 └── tfidf.pkl
 ```
+
 ---
 
-## Installation
+## Running Locally
 
 ### Clone the repository
 
 ```bash
 git clone https://github.com/abhinaya1/sentiment_classifier_deploy.git
-
 cd sentiment_classifier_deploy
-```
-
-### Create a virtual environment
-
-```bash
-python -m venv venv
-```
-
-Activate it:
-
-**Windows**
-
-```bash
-venv\Scripts\activate
-```
-
-**macOS/Linux**
-
-```bash
-source venv/bin/activate
 ```
 
 ### Install dependencies
@@ -137,45 +74,33 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
----
-
-## Run the FastAPI Backend
+### Start the FastAPI server
 
 ```bash
 uvicorn api:app --reload
 ```
 
-Open the interactive API documentation:
+API documentation:
 
 ```
 http://127.0.0.1:8000/docs
 ```
 
----
-
-## Run the Streamlit Frontend
+### Launch the Streamlit app
 
 ```bash
 streamlit run streamlit_app.py
 ```
 
-The application will be available at:
-
-```
-http://localhost:8501
-```
-
 ---
 
-## API Endpoint
-
-### POST `/predict`
+## API Example
 
 ### Request
 
 ```json
 {
-  "text": "The product works as expected."
+  "text": "This product exceeded my expectations!"
 }
 ```
 
@@ -183,55 +108,49 @@ http://localhost:8501
 
 ```json
 {
-  "prediction": "Neutral",
-  "confidence": 0.84,
+  "prediction": "Positive",
+  "confidence": 0.98,
   "probabilities": {
-    "Negative": 0.07,
-    "Neutral": 0.84,
-    "Positive": 0.09
+    "Negative": 0.01,
+    "Neutral": 0.01,
+    "Positive": 0.98
   }
 }
 ```
 
 ---
 
-## Sample Predictions
+## Related Project
 
-| Review | Prediction |
-|---------|------------|
-| This product exceeded my expectations! | Positive |
-| The product is okay and works as expected. | Neutral |
-| Very disappointed with the quality. | Negative |
-| Excellent value for the price. | Positive |
-| It's neither good nor bad. | Neutral |
+This repository focuses on **deployment**.
+
+The complete machine learning workflow—including data exploration, preprocessing, feature engineering, model training, evaluation, and model selection—is available in the original repository:
+
+**Customer Review Sentiment Classifier**
+https://github.com/abhinaya1/Customer-Review-Sentiment-Classifier
 
 ---
 
 ## Skills Demonstrated
 
-- Natural Language Processing (NLP)
-- Text Classification
-- TF-IDF Feature Engineering
-- Logistic Regression
-- Model Serialization
-- REST API Development
-- FastAPI
-- Streamlit
-- Machine Learning Deployment
-- Cloud Deployment
-- End-to-End ML Workflow
+* Machine Learning Deployment
+* REST API Development
+* FastAPI
+* Streamlit
+* Model Serialization
+* Cloud Deployment
+* End-to-End ML Applications
 
 ---
 
-## Future Enhancements
+## Future Improvements
 
-- Docker containerization
-- GitHub Actions for CI/CD
-- Model monitoring and logging
-- Batch prediction endpoint
-- Explainable AI using SHAP or LIME
-- Transformer-based models (BERT/RoBERTa)
-- User authentication
+* Docker containerization
+* CI/CD with GitHub Actions
+* Model monitoring
+* Automated testing
+* Explainable AI (SHAP/LIME)
+* Authentication and rate limiting
 
 ---
 
@@ -239,6 +158,6 @@ http://localhost:8501
 
 **Abhinaya Gyawali**
 
-- GitHub: https://github.com/abhinaya1
-- Portfolio: https://abhinaya1.github.io/
-- LinkedIn: https://www.linkedin.com/in/abhinaya-gyawali/
+* GitHub: https://github.com/abhinaya1
+* Portfolio: https://abhinaya1.github.io/
+* LinkedIn: https://www.linkedin.com/in/abhinaya-gyawali/
